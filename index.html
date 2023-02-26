@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.51.1/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <header>
+      <h1 class="text-4xl font-semibold text-center mb-4">Welcome To My Phone Hunter!</h1>
+    </header>
+    <main class="container mx-auto">
+      <!-- display search results -->
+      <section>
+        <div class="form-control ">
+          <div class="input-group flex justify-center mb-4">
+            <input id="search-field" type="text" placeholder="Search Your Phone" class="input input-bordered w-1/2" />
+            <button id="btn-search" class="btn btn-square">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
+            </button>
+          </div>
+        </div>
+      </section>
+      <!-- phones display -->
+      <section>
+        <div class="grid lg:grid-cols-3 md:grid-cols-2 gap-4" id="phone-container">
+
+        </div>
+        <div id="no-found-message" class="hidden mt-4">
+            <h3 class="text-center text-3xl text-yellow-500">No Phones Found. Please Try Again</h3>
+        </div>
+        <div id="show-all" class="text-center hidden">
+            <div id="btn-show-all" class="btn">Show All</div>
+        </div>
+      </section>
+      <!-- Loader -->
+      <section id="loader" class="hidden">
+        <div style="height: 400px;" class="flex justify-center items-center">
+            <progress class="progress w-56"></progress>
+        </div>
+      </section>
+      <!-- Modal content -->
+      <section>
+          <!-- The button to open modal -->
+          <div class="modal" id="phoneDetailModal">
+            <div class="modal-box">
+              <h3 id="modal-title" class="font-bold text-lg"></h3>
+              <p id="phone-details" class="py-4"></p>
+              <div class="modal-action">
+               <a href="#" class="btn">Close!</a>
+              </div>
+            </div>
+          </div>
+      </section>
+    </main>
+
+    <script src="/js/app.js"></script>
+  </body>
+</html>
